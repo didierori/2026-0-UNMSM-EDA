@@ -4,10 +4,13 @@
 #include <assert.h>
 using namespace std;
 #include <stddef.h>
+#include "../algorithms/sorting.h"
 
 template <typename T>
 class CArray {
   using value_type = T;
+  using CompareFunc = bool (*)(const T &, const T &);
+
 private:
   size_t m_capacity = 0, m_last = 0;
   value_type *m_data = nullptr;
@@ -21,7 +24,7 @@ public:
   size_t getSize() const
   {   return m_last + 1;  };
   void resize(size_t delta = 10);
-
+  void sort( CompareFunc pComp );
 };
 
 template <typename T>
@@ -61,6 +64,11 @@ void CArray<T>::resize(size_t delta) {
     delete[] m_data;
     m_data = new_data;
     m_capacity = new_capacity;
+}
+
+template <typename T>
+void CArray<T>::sort( CompareFunc pComp ){
+    BurbujaRecursivo(m_data, m_last, pComp);
 }
 
 template <typename T>

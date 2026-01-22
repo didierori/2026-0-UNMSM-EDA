@@ -4,7 +4,8 @@ LDFLAGS = -pthread # Añadido -pthread
 
 TARGET = main
 SRCS = main.cpp util.cpp pointers.cpp \
-       containers/array.cpp
+       containers/array.cpp \
+	   sorting.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET)
