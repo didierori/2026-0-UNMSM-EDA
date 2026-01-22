@@ -4,9 +4,11 @@
 using namespace std;
 #include "array.h"
 
+using T1 = int;
+
 void DemoArray() {
     const int N = 5;
-    CArray<int> arr1(N);
+    CArray<T1> arr1(N);
     for (auto i = 0; i < N; ++i)
       arr1.push_back(i * 10);
     cout << "First part finished" << endl;
@@ -32,9 +34,16 @@ void DemoArray() {
     arr1.sort(&Menor);
     cout << arr1 << endl;
 
-    arr1.Foreach(&Suma, 3);
+    arr1.Foreach(&Suma, 4);
     cout << arr1 << endl;
 
-    arr1.Foreach(&Mult, 5);
+    arr1.Foreach(&Mult, 3);
     cout << arr1 << endl;
+
+    CArray<string> arr2(N);
+    arr2[2] = "UNMSM";
+    arr2[4] = "FC";
+    cout << arr2 <<endl;
+    arr2.Foreach(&Suma, "Enero");
+    cout << arr2 <<endl;
 }

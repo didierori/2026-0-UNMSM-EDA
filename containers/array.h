@@ -72,8 +72,11 @@ void CArray<T>::sort( CompareFunc pComp ){
     BurbujaRecursivo(m_data, m_last, pComp);
 }
 
-void Suma(int &elem, int p1){    elem += p1;     }
-void Mult(int &elem, int p1){    elem *= p1;     }
+template <typename Q>
+void Suma(Q &elem, Q p1){    elem += p1;     }
+
+template <typename Q>
+void Mult(Q &elem, Q p1){    elem *= p1;     }
 
 template <typename T>
 void CArray<T>::Foreach(void (*pf)(T &, T), T p1 ){
