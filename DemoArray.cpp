@@ -36,17 +36,18 @@ void DemoArray() {
     arr1.sort(&Menor);
     cout << arr1 << endl;
 
-    arr1.Foreach(&Suma, 4);
+    arr1.Foreach(&Suma<T1>, 4);
     cout << arr1 << endl;
 
-    arr1.Foreach(&Mult, 3);
+    arr1.Foreach(&Mult<T1>, 3);
     cout << arr1 << endl;
 
-    CArray<string> arr2(N);
+    using T2 = string;
+    CArray<T2> arr2(N);
     arr2[2] = "UNMSM";
     arr2[4] = "FC";
     cout << arr2 <<endl;
-    arr2.Foreach(&Suma, "Enero");
+    arr2.Foreach(&Suma<T2>, "Enero");
     cout << arr2 <<endl;
 
     int x = Test(5, 3, 2);
