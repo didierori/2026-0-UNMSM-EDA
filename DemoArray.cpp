@@ -2,7 +2,9 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
-#include "array.h"
+#include "containers/array.h"
+#include "compareFunc.h"
+#include "variadic-util.h"
 
 using T1 = int;
 
