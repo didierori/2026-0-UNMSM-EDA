@@ -1,4 +1,5 @@
 #ifndef __ARRAY_H__
+
 #define __ARRAY_H__
 #include <iostream>
 #include <assert.h>

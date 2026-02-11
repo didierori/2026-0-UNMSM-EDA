@@ -4,6 +4,7 @@
 
 #include "linkedlist.h"
 
+void DemoQueue();
 void DemoLists();
 
 #endif // __LISTS_H__
